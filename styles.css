@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    border: 1px solid #000;
+    position: relative;
+    margin: 0 auto;
+    height: 960px;
+    width: 960px;
+    }
+
+.square {
+    height: 50px;
+    width: 50px;
+    background-color: #555;
+}
