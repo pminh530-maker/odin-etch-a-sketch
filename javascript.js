@@ -2,10 +2,11 @@
 
 let container = document.querySelector(".container");
 
-for (let row = 0; row < 16; row++) {
+let size = 16;
+
+for (let i = 0; i < size * size ; i++) {
         let square = document.createElement("div");
         square.classList.add("square");
-        square.style.height = "(960/16)px";
-        square.style.width = "(960/16)px";
         container.appendChild(square);
+        console.log(square.childElementCount);
 }

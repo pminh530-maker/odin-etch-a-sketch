@@ -1,16 +1,20 @@
 .container {
     display: flex;
-    justify-content: space-evenly;
-    gap: 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    flex-wrap: wrap;
     border: 1px solid #000;
+    padding: 15px;
     position: relative;
-    margin: 0 auto;
-    height: 960px;
-    width: 960px;
+    margin: auto;
+    height: 850px;
+    width: 850px;
     }
 
 .square {
-    height: 50px;
-    width: 50px;
-    background-color: #555;
+    box-sizing: border-box;
+    border: solid white 1px;
+    height: 6.25%;
+    width: 6.25%;
+    background-color: #572d8f;
 }
