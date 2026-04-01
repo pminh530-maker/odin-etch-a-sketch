@@ -1,5 +1,4 @@
-// Task 1: Create a 16 x 16 grid using for loops.
-let container = document.querySelector(".container");
+let container = document.querySelector(".container");   
 
 let size = 16;
 function createGrid(size) {
@@ -10,19 +9,36 @@ function createGrid(size) {
                         square.style.width = `${960/size}px`;
                         square.style.height = `${960/size}px`;
                         container.appendChild(square);
-                        // Task 2: Create a hover effect with addEventListner()
+                        // Extra credit:
+                        // 1. Randomize the squares’ RGB values with each interaction.
+                        function getRandomColor() {
+                                let value = "0123456789ABCDEF";
+                                let color = "#";
+                                for (let i = 0; i < 6; i++) {
+                                        color += value[Math.floor(Math.random() * 16)]
+                                        // We HAVE TO use square brackets here to access the indexed properties of "value".
+                                }
+                                return color;
+                        }
+                        // Extra credit:
+                        // Implement a progressive darkening effect where each interaction darkens the square by 10%. The goal is to achieve a fully black (or completely colored) square in only ten interactions.
+                        function increaseOpacity (square) {
+                                let currentOpacity = Number(square.style.opacity);
+                                //Number(value) returns 0 if the "value" parameter is absent.
+                                if (currentOpacity < 1) {
+                                        square.style.opacity = currentOpacity + 0.1;
+                                }
+                        }
                         square.addEventListener("mouseenter", (e) => {
-                                square.style.backgroundColor = "violet";
+                                square.style.backgroundColor = getRandomColor();
+                                increaseOpacity(square);
+                                // Pass the specific square to the function
                         });
                 }
         }
 }
 createGrid(16);
 
-// Task 3: Create a button in the top-left corner.
-// When it's clicked, send a popup asking for the number of squares per side for the new grid.
-// After receiving the input, REMOVE the existing grid.
-// GENERATE a new grid in the same total space as before.
 let header = document.createElement("div");
 header.classList.add("header");
 document.body.prepend(header);

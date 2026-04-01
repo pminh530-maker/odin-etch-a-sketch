@@ -1,9 +1,15 @@
+body{
+    background-color: #a3cbf9;
+}
+h1 {
+    text-align: center;
+    background-color: white;
+}
 .container {
     display: flex;  
     flex: auto;
     flex-wrap: wrap;
     border: 1px solid #000;
-    padding: 15px;
     position: relative;
     margin: auto;
     height: 960px;
@@ -12,8 +18,8 @@
 
 .square {
     box-sizing: border-box;
-    outline: solid white 1px;
-    background-color: #572d8f;
+    outline: solid black 1px;
+    background-color: #ffffff;
 }
 
 .button {
